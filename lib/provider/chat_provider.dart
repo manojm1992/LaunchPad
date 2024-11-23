@@ -66,4 +66,16 @@ class ChatProvider extends ChangeNotifier {
     );
     sendMessage(chatMessage);
   }
+
+  // New method to load messages
+  void loadMessages(List<ChatMessage> messages) {
+    _messages = messages;
+    notifyListeners();
+  }
+
+  // Clear messages method for clearing the chat
+  void clearMessages() {
+    _messages = [];
+    notifyListeners();
+  }
 }
